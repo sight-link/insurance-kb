@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>展业知识库</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+  <div class="app">
+    <!-- 顶部栏 -->
+    <header class="header">
+      <h1>📋 展业知识库</h1>
+      <span class="status" id="status">就绪</span>
+    </header>
+
+    <!-- 录入区 -->
+    <section class="input-section">
+      <h2>📝 快速录入</h2>
+      <textarea 
+        id="input-text" 
+        placeholder="口述或粘贴内容，例如：&#10;今天遇到客户说'我有团险不需要自己买'，我用三点回应..."
+        rows="5"
+      ></textarea>
+      <div class="input-actions">
+        <button id="btn-voice" class="btn-secondary">🎤 语音录入</button>
+        <button id="btn-submit" class="btn-primary">✨ 智能整理并保存</button>
+      </div>
+    </section>
+
+    <!-- 结果展示区 -->
+    <section class="result-section" id="result-area" style="display:none;">
+      <h2>📄 整理结果</h2>
+      <div class="card" id="result-card"></div>
+      <button id="btn-save" class="btn-success">💾 确认保存</button>
+    </section>
+
+    <!-- 搜索区 -->
+    <section class="search-section">
+      <h2>🔍 素材检索</h2>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="输入关键词，如：团险、异议、案例...">
+        <button id="btn-search" class="btn-primary">搜索</button>
+      </div>
+      <div class="results" id="search-results"></div>
+    </section>
+
+    <!-- 素材列表 -->
+    <section class="list-section">
+      <h2>📚 全部素材</h2>
+      <div class="filter-tabs">
+        <button class="tab active" data-type="all">全部</button>
+        <button class="tab" data-type="objection">异议处理</button>
+        <button class="tab" data-type="case">成功案例</button>
+        <button class="tab" data-type="knowledge">知识点</button>
+      </div>
+      <div id="item-list"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
